@@ -1,160 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>
-  <!-- Miniatura para compartir -->
-  <meta property="og:title" content="Calíope - Mi primer añito - Califest">
-  <meta property="og:description" content="Los invito a festejar mi primer añito 💚">
-  <meta property="og:image" content="https://lisandrosanma.github.io/PrimeraCaliFest/Miniatura.jpg">
-  <meta property="og:url" content="https://lisandrosanma.github.io/PrimeraCaliFest/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calíope - Mi Primer Añito 🎂💚</title>
+
+  <!-- Miniatura al compartir -->
+  <meta property="og:title" content="¡Calíope cumple su primer añito! 🎉">
+  <meta property="og:description" content="Te invito a celebrar conmigo la Califest 🎂💚">
+  <meta property="og:image" content="https://lisandrosanma.github.io/Pr1meraCal1Fest/Miniatura.jpg">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://lisandrosanma.github.io/Pr1meraCal1Fest/">
+
   <style>
-html, body {
-  margin:0; padding:0;
-  font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(to bottom right, #c0f0eb, #e0fff9);
-  color: #034d4a;
-  overflow-x: hidden;
-}
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #c2f0e9, #a1e3d8);
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      color: #245f54;
+      overflow-x: hidden;
+      height: 100vh;
+    }
 
-/* Fondo animado */
-.background {
-  position: fixed; top:0; left:0;
-  width:100%; height:100%;
-  overflow:hidden;
-  z-index:0;
-}
-.background img {
-  position:absolute;
-  pointer-events:none;
-  opacity:0.8;
-}
-@keyframes float {
-  0% { transform: translateY(100vh) rotate(0deg); opacity:1; }
-  100% { transform: translateY(-10vh) rotate(360deg); opacity:0; }
-}
+    h1 {
+      font-size: 2em;
+      margin-top: 1.5em;
+    }
 
-/* Contenido principal */
-.container {
-  position: relative;
-  z-index: 2;
-  display:flex;
-  flex-direction: column;
-  align-items:center;
-  padding:20px;
-  text-align:center;
-}
+    p {
+      font-size: 1.1em;
+      margin: 0.5em auto;
+      width: 80%;
+      line-height: 1.5em;
+    }
 
-h1, p { margin:10px 0; line-height:1.4; text-align:center; }
-h1 { color:#01796f; font-size:2em; animation: fadeIn 2s ease-in-out; }
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-top: 20px;
+      border: 5px solid #74d6c3;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
 
-img#fotoBebe {
-  width:150px; height:150px; object-fit:cover; border-radius:50%;
-  box-shadow:0 0 15px rgba(0,77,74,0.2);
-  cursor:pointer; transition: transform 0.3s ease;
-  animation:pulse 2.5s infinite; margin:15px 0;
-}
-img#fotoBebe:hover { transform: scale(1.05); }
+    img:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
 
-.buttons {
-  display:flex; flex-direction:column; gap:12px;
-  width:90%; max-width:300px; margin-bottom:20px;
-}
-.buttons button {
-  background: linear-gradient(90deg, #4dd0c5, #26a69a);
-  border:none; color:#fff; font-size:1em; padding:12px 15px;
-  border-radius:12px; cursor:pointer;
-  box-shadow:0 2px 8px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, background 0.8s ease;
-}
-.buttons button:hover { transform: scale(1.05); }
+    .botones {
+      margin-top: 20px;
+    }
 
-#mensajeFinal {
-  position:fixed; top:40%; left:50%; transform:translate(-50%,-50%);
-  font-size:1.6em; color:#01796f; background:rgba(255,255,255,0.85);
-  padding:15px 25px; border-radius:15px; opacity:0; pointer-events:none;
-  text-align:center; box-shadow:0 0 15px rgba(0,0,0,0.2); z-index:3;
-  transition: opacity 1s ease;
-}
+    button {
+      background-color: #74d6c3;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-size: 1em;
+      margin: 8px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
 
-@keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
-@keyframes pulse {0%,100%{transform:scale(1);}50%{transform:scale(1.04);} }
-@keyframes spin { from{transform:rotate(0deg) scale(1);} to{transform:rotate(360deg) scale(1.2);} }
+    button:hover {
+      transform: scale(1.05);
+      background-color: #5fc1ad;
+    }
 
-</style>
+    /* Flores animadas */
+    .flor {
+      position: absolute;
+      width: 80px;
+      opacity: 0.8;
+      animation: flotar 10s infinite ease-in-out;
+    }
+
+    @keyframes flotar {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 1.2em;
+      color: #245f54;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
 
-<div class="background" id="background"></div>
+  <h1>💚 Calíope 💚</h1>
+  <p>¡Te invito a festejar mi primer añito!</p>
+  <p>📍 Dirección: <a href="https://maps.google.com/?q=-34.8557038,-58.3888914" target="_blank">Ver ubicación</a></p>
 
-<div class="container">
-  <h1>💌 ¡Te esperamos en mi Califest! 💫</h1>
-  <img src="foto_bebe.jpg" id="fotoBebe" alt="Foto de la bebé">
-  <p>👶 Soy la bebé más guarachera y si no me creés...<br> ¡tocá mi foto! 💃🎶</p>
+  <img src="foto_bebe.jpg" alt="Foto de Calíope" id="foto-bebe" onclick="reproducirMusica()">
 
-  <div class="buttons">
-    <button onclick="window.open('https://maps.google.com/?q=-34.8557038,-58.3888914','_blank')">📍 Cómo llegar</button>
-    <button onclick="window.open('https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cumple+de+Cal%C3%ADope&dates=20251206T160000Z/20251206T190000Z&details=Primer+añito&location=Tano+Eventos','_blank')">📅 Guardar fecha</button>
-    <button onclick="window.open('https://wa.me/5491156637770?text=Confirmo%20asistencia%20al%20cumple%20de%20Cal%C3%ADope','_blank')">💬 Confirmar asistencia</button>
+  <p><strong>Soy la bebé más guarachera 💃 y si no me creés... ¡tocá mi foto!</strong></p>
+
+  <div class="botones">
+    <button onclick="confirmar()">Confirmar asistencia</button>
+    <button onclick="location.href='https://calendar.google.com/calendar/r/eventedit?text=Calíope+Primer+Año&dates=20251130T180000Z/20251130T210000Z&details=Califest&location=-34.8557038,-58.3888914'">
+      Agendar evento
+    </button>
   </div>
-</div>
 
-<audio id="musica" preload="auto">
-  <source src="musica.mp3" type="audio/mpeg">
-  Tu navegador no soporta audio.
-</audio>
+  <footer id="mensaje-final" style="display:none;">¡Nos vemos en la Califest! 🎂💚</footer>
 
-<div id="mensajeFinal">¡Nos vemos en la Califest! 🎂💚</div>
+  <!-- Flores animadas -->
+  <img src="flores/Flor1.png" class="flor" style="top:10%; left:5%;">
+  <img src="flores/Flor2.png" class="flor" style="top:30%; right:10%;">
+  <img src="flores/Flor3.png" class="flor" style="bottom:20%; left:15%;">
+  <img src="flores/Flor4.png" class="flor" style="bottom:10%; right:20%;">
+  <img src="flores/Flor5.png" class="flor" style="top:50%; left:40%;">
 
-<script>
-const background = document.getElementById('background');
-const flores = [
-  'flores/Flor1.png',
-  'flores/Flor2.png',
-  'flores/Flor3.png',
-  'flores/Flor4.png',
-  'flores/Flor5.png'
-];
+  <audio id="musica" src="musica.mp3"></audio>
 
-// Genera animación de flores con parallax
-for(let i=0;i<40;i++){
-  const img = document.createElement('img');
-  img.src = flores[Math.floor(Math.random()*flores.length)];
-  const size = 30 + Math.random()*50;
-  img.style.width = size+'px';
-  img.style.left = Math.random()*100+'vw';
-  img.style.top = Math.random()*100+'vh';
-  img.style.opacity = 0.5 + Math.random()*0.5;
-  img.style.zIndex = Math.random()<0.5 ? 1 : 2; 
-  img.style.pointerEvents='none';
-  img.style.animationDuration = (4+Math.random()*6)+'s';
-  img.style.animationDelay = Math.random()*5+'s';
-  img.style.animationName='float';
-  img.style.animationTimingFunction='linear';
-  img.style.animationIterationCount='infinite';
-  background.appendChild(img);
-}
+  <script>
+    function reproducirMusica() {
+      const musica = document.getElementById('musica');
+      musica.play();
+    }
 
-const foto = document.getElementById('fotoBebe');
-const music = document.getElementById('musica');
-const mensaje = document.getElementById('mensajeFinal');
-
-foto.addEventListener('click', ()=>{
-  music.play();
-  foto.style.animation='spin 3s linear';
-  setTimeout(()=>foto.style.animation='pulse 2.5s infinite',3000);
-  mensaje.style.opacity=1;
-  setTimeout(()=>mensaje.style.opacity=0,5000);
-});
-
-music.addEventListener('ended',()=>{
-  mensaje.style.opacity=1;
-  setTimeout(()=>mensaje.style.opacity=0,5000);
-});
-</script>
+    function confirmar() {
+      alert('¡Confirmado! 💚');
+      document.getElementById('mensaje-final').style.display = 'block';
+    }
+  </script>
 
 </body>
 </html>
+
